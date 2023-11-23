@@ -1,0 +1,12 @@
+{
+   "type" : "record",
+   "namespace" : "com.employees.Employee",
+   "name" : "VehicleDetails",
+   "fields" : [
+       { "name" : "id" , "type" : "int" },
+      { "name" : "VehicleNumber" , "type" : "string" },
+      { "name" : "VehicleName" , "type" : "string" },
+      { "name" : "InsuranceDetails" , "type" : "string" },
+      { "name" : "ManufacturingYear" , "type" : "string" }
+   ]
+}
