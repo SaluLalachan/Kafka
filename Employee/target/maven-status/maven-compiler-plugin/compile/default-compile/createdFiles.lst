@@ -1,0 +1,8 @@
+com\employees\Employee\EmployeeProducer.class
+com\employees\Employee\PersonalDetails.class
+com\employees\Employee\VehicleDetails.class
+com\employees\Employee\AddressDetails$Builder.class
+com\employees\Employee\EmployeeApplication.class
+com\employees\Employee\AddressDetails.class
+com\employees\Employee\PersonalDetails$Builder.class
+com\employees\Employee\VehicleDetails$Builder.class
