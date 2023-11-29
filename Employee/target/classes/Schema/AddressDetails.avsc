@@ -1,5 +1,5 @@
 {
-   "namespace" : "com.employees.Employee",
+   "namespace" : "com.employees.Employee.kafka.avro.model",
    "type" : "record",
    "name" : "AddressDetails",
    "fields" : [

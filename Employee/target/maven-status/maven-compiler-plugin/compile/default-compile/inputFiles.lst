@@ -1,5 +1,6 @@
-C:\Employee\src\main\java\com\employees\Employee\AddressDetails.java
-C:\Employee\src\main\java\com\employees\Employee\EmployeeProducer.java
-C:\Employee\src\main\java\com\employees\Employee\PersonalDetails.java
-C:\Employee\src\main\java\com\employees\Employee\VehicleDetails.java
+C:\Employee\src\main\java\com\employees\Employee\kafka\avro\model\PersonalDetails.java
+C:\Employee\src\main\java\com\employees\Employee\kafka\avro\model\VehicleDetails.java
+C:\Employee\src\main\java\com\employees\Employee\Services\EmployeeConsumer.java
+C:\Employee\src\main\java\com\employees\Employee\Services\EmployeeProducer.java
 C:\Employee\src\main\java\com\employees\Employee\EmployeeApplication.java
+C:\Employee\src\main\java\com\employees\Employee\kafka\avro\model\AddressDetails.java
