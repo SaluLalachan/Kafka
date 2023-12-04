@@ -1,15 +1,15 @@
 {
-   "namespace" : "com.employees.Employee.kafka.avro.model",
+   "namespace" : "com.employees.Employee",
    "type" : "record",
    "name" : "AddressDetails",
    "fields" : [
        { "name" : "id" , "type" : "int" },
-      { "name" : "HouseName" , "type" : "string" },
-      { "name" : "StreetName" , "type" : "string" },
-      { "name" : "City" , "type" : "string" },
-      { "name" : "PostCode" , "type" : "int" },
-      { "name" : "District" , "type" : "string" },
-      { "name" : "State" , "type" : "string" },
-      { "name" : "Country" , "type" : "string" }
+      { "name" : "houseName" , "type" : "string" },
+      { "name" : "streetName" , "type" : "string" },
+      { "name" : "city" , "type" : "string" },
+      { "name" : "postCode" , "type" : "int" },
+      { "name" : "district" , "type" : "string" },
+      { "name" : "state" , "type" : "string" },
+      { "name" : "country" , "type" : "string" }
    ]
 }

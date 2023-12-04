@@ -12,10 +12,8 @@ import org.springframework.context.annotation.Configuration;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
-@Configuration
 public class EmployeeConsumer {
-    @Bean
-        public void setConsumerProperties() {
+        public static void main(String[] args) {
             System.out.println("Consumer invoked");
             String groupId="employee-data";
             Properties properties = new Properties();
@@ -26,9 +24,9 @@ public class EmployeeConsumer {
             properties.setProperty("group.id",groupId);
 
             KafkaConsumer<String,AddressDetails> consumer=new KafkaConsumer<>(properties);
-            consumer.subscribe(Arrays.asList("Addressdetails"));
+            consumer.subscribe(Arrays.asList("Addressabc"));
             while(true) {
-                System.out.println("polling");
+                //System.out.println("polling");
                 ConsumerRecords<String, AddressDetails> record = consumer.poll(Duration.ofMillis(1000));
                 for(ConsumerRecord<String,AddressDetails> records: record){
                     System.out.println(records.value());
