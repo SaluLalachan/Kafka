@@ -1,0 +1,15 @@
+{
+   "type" : "record",
+   "name" : "AddressDetails",
+   "namespace" : "com.employees.Employee",
+   "fields" : [
+      { "name" : "id" , "type" : "int" },
+      { "name" : "houseName" , "type" : "string" },
+      { "name" : "streetName" , "type" : "string" },
+      { "name" : "city" , "type" : "string" },
+      { "name" : "postCode" , "type" : "int" },
+      { "name" : "district" , "type" : "string" },
+      { "name" : "state" , "type" : "string" },
+      { "name" : "country" , "type" : "string" }
+   ]
+}
