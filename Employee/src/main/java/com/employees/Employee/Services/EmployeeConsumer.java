@@ -20,7 +20,7 @@ public class EmployeeConsumer {
             properties.setProperty("bootstrap.servers","127.0.0.1:9092");
             properties.setProperty("key.deserializer", StringDeserializer.class.getName());
             properties.setProperty("value.deserializer", KafkaAvroDeserializer.class.getName());
-            properties.setProperty("schema.registry.url","http://localhost/8080");
+            properties.setProperty("schema.registry.url","http://localhost/8081");
             properties.setProperty("group.id",groupId);
 
             KafkaConsumer<String,AddressDetails> consumer=new KafkaConsumer<>(properties);

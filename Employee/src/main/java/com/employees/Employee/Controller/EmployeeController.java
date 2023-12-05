@@ -17,9 +17,8 @@ public class EmployeeController {
 
     @PostMapping("/publish")
     public void sendDetails(@RequestBody AddressDetails addressDetails) throws ExecutionException, InterruptedException {
-        EmployeeProducer.sendMessage(addressDetails);
-//        System.out.println(addressDetails);
-//        return addressDetails.toString();
+        employeeProducer.sendMessage(addressDetails);
+
     }
     @PostMapping("/check")
     public String sendDetails(@RequestParam String message) {
