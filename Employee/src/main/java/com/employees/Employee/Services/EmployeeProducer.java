@@ -20,12 +20,6 @@ import java.util.Properties;
 public class EmployeeProducer {
 
     private static final Logger log = LoggerFactory.getLogger(EmployeeProducer.class);
-    private final KafkaProducer<String, AddressDetails> kafkaProducer;
-   // private final KafkaTemplate<String,Object> kafkaTemplate;
-
-    public EmployeeProducer(KafkaProducer<String,AddressDetails> kafkaProducer) {
-        this.kafkaProducer = kafkaProducer;
-    }
 
     public void sendMessage(AddressDetails addressDetails) {
         System.out.println("Producer invoked");
@@ -63,4 +57,3 @@ public class EmployeeProducer {
 
 
 }
-
