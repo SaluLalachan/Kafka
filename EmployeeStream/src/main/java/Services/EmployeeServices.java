@@ -40,39 +40,46 @@ public class EmployeeServices {
         KStream<String, PersonalDetails> personal = builder.stream("Personaldetails", Consumed.with(Serdes.String(), personalDetailsSpecificAvroSerde));
         KStream<String, VehicleDetails> vehicle = builder.stream("vehicledetails", Consumed.with(Serdes.String(), vehicleDetailsSpecificAvroSerde));
 
-        KStream<String, EmployeeDetails> addressDetailsPersonalDetailsKStream = personal.outerJoin(
-                address,
-                (personalDetails, addressDetails) -> employeeAdd(addressDetails, personalDetails),
-                JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofMinutes(5)),
-                Joined.with(Serdes.String(), personalDetailsSpecificAvroSerde, addressDetailsSpecificAvroSerde));
+        KStream<String, EmployeeDetails> addressDetailsPersonalDetailsKStream = personal.outerJoin(address,
+//                (personalDetails, addressDetails) -> employeeAdd(addressDetails, personalDetails),
+                EmployeeAdd::employeeadd,
+                JoinWindows.of(Duration.ofMinutes(1)))
+              // , Joined.with(Serdes.String(), personalDetailsSpecificAvroSerde, addressDetailsSpecificAvroSerde))
+                .selectKey((k,v) ->v.getId()).groupByKey().toStream();
 
         KafkaStreams streams = new KafkaStreams(builder.build(), properties);
         streams.start();
     }
 
-    public static EmployeeDetails employeeAdd(AddressDetails addressDetails, PersonalDetails personalDetails) {
-        EmployeeDetails employeeDetails = new EmployeeDetails();
-        if (addressDetails == null) {
-            if (personalDetails != null) {
-               
-            }
-        } else {
-            employeeDetails.newBuilder()
-                    .setId(addressDetails.getId())
-                    .setHouseName(addressDetails.getHouseName())
-                    .setStreetName(addressDetails.getStreetName())
-                    .setCity(addressDetails.getCity())
-                    .setPostCode(addressDetails.getPostCode())
-                    .setDistrict(addressDetails.getDistrict())
-                    .setState(addressDetails.getState())
-                    .setCountry(addressDetails.getCountry())
-                    .setName(personalDetails.getName())
-                    .setLastName(personalDetails.getLastName())
-                    .setAge(personalDetails.getAge())
-                    .setSex(personalDetails.getSex())
-                    .build();
-        }
-
-        return employeeDetails;
-    }
+//    public static EmployeeDetails employeeAdd(AddressDetails addressDetails, PersonalDetails personalDetails) {
+//        EmployeeDetails employeeDetails = new EmployeeDetails();
+//        if (addressDetails == null) {
+//            if (personalDetails != null) {
+//                employeeDetails.newBuilder()
+//                        .setId(personalDetails.getId())
+//                        .setName(personalDetails.getName())
+//                        .setLastName(personalDetails.getLastName())
+//                        .setAge(personalDetails.getAge())
+//                        .setSex(personalDetails.getSex())
+//                        .build();
+//            }
+//        } else {
+//            employeeDetails.newBuilder()
+//                    .setId(addressDetails.getId())
+//                    .setHouseName(addressDetails.getHouseName())
+//                    .setStreetName(addressDetails.getStreetName())
+//                    .setCity(addressDetails.getCity())
+//                    .setPostCode(addressDetails.getPostCode())
+//                    .setDistrict(addressDetails.getDistrict())
+//                    .setState(addressDetails.getState())
+//                    .setCountry(addressDetails.getCountry())
+//                    .setName(personalDetails.getName())
+//                    .setLastName(personalDetails.getLastName())
+//                    .setAge(personalDetails.getAge())
+//                    .setSex(personalDetails.getSex())
+//                    .build();
+//        }
+//
+//        return employeeDetails;
+//    }
 }
