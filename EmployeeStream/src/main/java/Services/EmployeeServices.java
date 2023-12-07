@@ -54,13 +54,7 @@ public class EmployeeServices {
         EmployeeDetails employeeDetails = new EmployeeDetails();
         if (addressDetails == null) {
             if (personalDetails != null) {
-                employeeDetails.newBuilder()
-                        .setId(personalDetails.getId())
-                        .setName(personalDetails.getName())
-                        .setLastName(personalDetails.getLastName())
-                        .setAge(personalDetails.getAge())
-                        .setSex(personalDetails.getSex())
-                        .build();
+               
             }
         } else {
             employeeDetails.newBuilder()
