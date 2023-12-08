@@ -1,0 +1,23 @@
+{
+   "type" : "record",
+   "name" : "EmployeeDetails",
+   "namespace" : "com.employees.Employee.kafka.avro.model",
+   "fields" : [
+      { "name" : "id" , "type" : "int" },
+      { "name" : "houseName" , "type" : "string" },
+      { "name" : "streetName" , "type" : "string" },
+      { "name" : "city" , "type" : "string" },
+      { "name" : "postCode" , "type" : "int" },
+      { "name" : "district" , "type" : "string" },
+      { "name" : "state" , "type" : "string" },
+      { "name" : "country" , "type" : "string" },
+      { "name" : "Name" , "type" : "string" },
+      { "name" : "LastName" , "type" : "string" },
+      { "name" : "Age" , "type" : "int" },
+      { "name" : "Sex" , "type" : "string" },
+      { "name" : "VehicleNumber" , "type" : "string" },
+      { "name" : "VehicleName" , "type" : "string" },
+      { "name" : "InsuranceDetails" , "type" : "string" },
+      { "name" : "ManufacturingYear" , "type" : "string" }
+   ]
+}
